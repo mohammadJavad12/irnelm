@@ -1,4 +1,75 @@
-p {
-    text-align: right;
-    font-family: "B Yekan";
+body {
+    direction: rtl;
+    font-family: "iransans";
+}
+
+body {
+    background: linear-gradient(270deg, #f8f8f8, #c9c9c9, #ffffff);
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 30s ease infinite;
+    -moz-animation: AnimationName 30s ease infinite;
+    animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+.main-menu > ul > li {
+    float: right;
+    list-style: none;
+    position: relative;
+    }
+.main-menu ul li a {
+    padding: 26px 22px;
+    display: inline-block;
+    font-size: 15px;
+    text-decoration: none;
+    color: #454647;
+    font-weight: bold;
+}
+.main-menu ul li a i {
+    margin-right: 5px;
+}
+.main-menu ul li ul {
+    position: absolute;
+    width: 250px;
+    background: #fff;
+    top: 115px;
+    right: 0;
+    box-shadow: 0px 1px 6px #e6e6e6;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .2s ease-in-out;
+    z-index: 999;
+}
+.main-menu ul li ul li {
+    list-style: none;
+}
+.main-menu ul li ul li a {
+    padding: 9px 15px;
+    display: block;
+    font-weight: normal;
+    
+}
+.main-menu ul li ul li a:hover {
+    background: #5caf21;
+    color: #fff;
+}
+.main-menu > ul > li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    top: 83px;
 }

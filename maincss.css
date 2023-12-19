@@ -75,7 +75,7 @@ input[type="text"] {
     left: 0;
 }
 .right-box {
-    float: right;
+    float: left;
     width: 70%;
     margin-top: 15px;
     background-color: #7aa0e6;
@@ -83,15 +83,7 @@ input[type="text"] {
     border-radius: 15px;
     box-shadow: 0px 0px 10px 1px #636363;
 }
-.left-box {
-    float: left;
-    width: 20%;
-    margin-top: 15px;
-    background-color: #deffbf;
-    color: black;
-    box-shadow: 0px 0px 10px 1px #636363;
-    border-radius: 15px;
-}
+
 #main {
     float: right;
     width: 90%;
@@ -156,4 +148,49 @@ input[type="text"] {
     padding-bottom: 5px;
     font-size: 18px;
     font-family: tahoma;
+}
+
+	
+/*start cat box*/
+.cat-box{
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px 1px #636363;
+    margin-top: 20px;
+    height: 100%;
+    width: 25%;
+    border-radius: 15px;
+}
+.cat-box h3{
+    color: #000000;
+    font-size: 18px;
+    padding: 15px;
+    border-bottom: 1px solid #535a64;
+    font-weight: 900;
+    
+}
+.cat-box h3 i{
+    position: relative;
+    margin-left: 10px;
+}
+.cat-box ul{
+    font-family: BYekan;
+    font-size: 14px;
+}
+.cat-box ul li {
+    position: relative;
+    width: 100%;
+}
+.cat-box ul li:hover{
+    background-color: #535a64;
+}
+.cat-box ul li a{
+    display: block;
+    color: #000000;
+    padding: 15px;
+    border-bottom: 1px solid #535a64;
+    font-size: 16px;
+    font-weight: 600;
+}
+img{
+    width: 70%;
 }

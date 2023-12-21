@@ -4,7 +4,7 @@ body {
     text-align: right;
     color: #ffffff;
     line-height: 30px;
-    font-family: 'iransans';
+    font-family: 'Vazir';
     background-color: white;
     
 }
@@ -96,7 +96,7 @@ input[type="text"] {
     padding-right: 25px;
     padding-bottom: 5px;
     font-size: 20px;
-    font-family: tahoma;
+    font-family: "B Titr";
     font-weight: bold;
 
 }
@@ -106,7 +106,7 @@ input[type="text"] {
     padding-right: 25px;
     padding-bottom: 5px;
     font-size: 15px;
-    font-family: tahoma;
+    font-family: "Vazir";
 }
 .post-content {
     padding-right: 25px;
@@ -114,7 +114,7 @@ input[type="text"] {
     padding-bottom: 5px;
     text-align: justify;
     font-size: 18px;
-    font-family: tahoma;
+    font-family: "B Nazanin";
 }
 .about-web {
     border-style: solid;

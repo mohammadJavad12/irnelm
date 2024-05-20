@@ -23,7 +23,7 @@ input[type="text"] {
     left: 0;
 }
 .right-box {
-    float: left;
+    float: right;
     width: 70%;
     margin-top: 15px;
     background-color: hsl(0, 0%, 100%);

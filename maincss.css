@@ -1,13 +1,4 @@
-body {
-    direction: rtl;
-    font-size: 14px;
-    text-align: right;
-    color: #ffffff;
-    line-height: 30px;
-    font-family: 'Vazir';
-    background-color: #9c88ff;
-    
-}
+
 
 
 input[type="text"] {
@@ -121,6 +112,8 @@ code{
 html, body {
   margin: 0;
   background: var(--background);
+	font-family: 'Vazir';
+	
 }
 
 #nav-toggle:checked ~ #nav-header {

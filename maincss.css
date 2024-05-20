@@ -15,7 +15,7 @@ input[type="text"] {
 }
 .right-box {
     float: right;
-    width: 70%;
+    width: 30%;
     margin-top: 15px;
     background-color: hsl(0, 0%, 100%);
     color: black;

@@ -171,6 +171,7 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   overflow: hidden;
   user-select: none;
+  height: 90%;
 }
 #nav-bar hr {
   margin: 0;

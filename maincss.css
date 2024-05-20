@@ -21,13 +21,14 @@ input[type="text"] {
     color: black;
     border-radius: 15px;
     box-shadow: 0px 0px 10px 1px #636363;
+    text-align: right;
 }
 
 #main {
     float: right;
-    width: 10%;
+    width: 87%;
     margin-right: 5%;
-    
+    text-align: right;
 }
 
 .post-title{
@@ -51,7 +52,7 @@ input[type="text"] {
     padding-right: 25px;
     padding-left: 25px;
     padding-bottom: 5px;
-    text-align: justify;
+    text-align: right;
     font-size: 18px;
     font-family: "B Nazanin";
 }
@@ -109,7 +110,7 @@ code{
   --navbar-light-secondary: #8392a5;
 }
 
-html, body {
+body {
   margin: 0;
   background: var(--background);
 	font-family: 'Vazir';
@@ -208,6 +209,7 @@ html, body {
 #nav-title {
   font-size: 1.5rem;
   transition: opacity 1s;
+  text-align: right;
 }
 
 label[for=nav-toggle] {

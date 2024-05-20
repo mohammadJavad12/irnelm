@@ -1,9 +1,15 @@
 
 var i = 0;
 var txt = 'ایرن علم'; /* The text */
-var speed = 50; /* The speed/duration of the effect in milliseconds */
+var speed = 100; /* The speed/duration of the effect in milliseconds */
 
-function typeWriter() {
+
+window.onload = function(){  
+  typeWriter();
+}
+
+
+function typeWriter(){
   if (i < txt.length) {
     document.getElementById("nav-title").innerHTML += txt.charAt(i);
     i++;

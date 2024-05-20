@@ -140,7 +140,7 @@ body {
   background: var(--navbar-light-secondary);
   transform: translate(0, 0) rotate(0deg);
 }
-#nav-toggle:checked ~ #nav-content .nav-button span {
+#nav-toggle:checked ~ #nav-content .nav-button a {
   opacity: 0;
   transition: opacity 0.1s;
 }
@@ -306,7 +306,7 @@ label[for=nav-toggle] {
   z-index: 1;
   transition: color 0.2s;
 }
-.nav-button span {
+.nav-button a {
   transition: opacity 1s;
 }
 .nav-button .fas {

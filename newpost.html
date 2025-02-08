@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ایجاد پست جدید</title>
+    <link rel="stylesheet" href="editor.css">
+</head>
+<body>
+    <div id="sidebar">
+        <ul>
+            <li><a href="#">خانه</a></li>
+            <li><a href="#">درباره ما</a></li>
+            <li><a href="#">تماس با ما</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="title-container">
+            <h1>ایجاد یک پست جدید</h1>
+            <p class="subtitle">در این بخش می‌توانید عنوان و محتوای پست خود را وارد کنید.</p>
+        </div>
+        <form id="postForm">
+            <input type="text" id="title" placeholder="عنوان پست" required>
+            <div class="editor-container">
+                <div class="editor-buttons">
+                    <select id="fontFamily" onchange="changeFont()">
+                        <option value="Vazir">🖋 Vazir</option>
+                        <option value="IRANSans">✒ IRANSans</option>
+                        <option value="Roboto">🔤 Roboto</option>
+                    </select>
+                    <select id="fontSize" onchange="changeFontSize()">
+                        <option value="16px">🔠 16px</option>
+                        <option value="18px">🔠 18px</option>
+                        <option value="20px">🔠 20px</option>
+                        <option value="24px">🔠 24px</option>
+                        <option value="30px">🔠 30px</option>
+                    </select>
+                    <button type="button" onclick="toggleBold()">🅱 Bold</button>
+                    <button type="button" onclick="toggleItalic()">𝘐 Italic</button>
+                    <button type="button" onclick="toggleUnderline()"> U Underline</button>
+                    <button type="button" onclick="toggleDirection()">🔄 تغییر جهت</button>
+                </div>
+                <div class="editor" contenteditable="true" id="content" dir="rtl"></div>
+            </div>
+            <button type="submit">💾 ذخیره و دانلود</button>
+        </form>
+    </div>
+
+    <script>
+        // Prevent form submission and trigger the download
+        document.getElementById("postForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent default form submission
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').innerHTML;
+            const direction = document.getElementById('content').dir;
+            
+            // Call the download function
+            downloadHTMLFile(title, content, direction);
+        });
+    
+        function changeFont() {
+            const font = document.getElementById('fontFamily').value;
+            document.getElementById('content').style.fontFamily = font;
+        }
+    
+        function changeFontSize() {
+            const fontSize = document.getElementById('fontSize').value;
+            document.getElementById('content').style.fontSize = fontSize;
+        }
+    
+        function toggleBold() {
+            document.execCommand('bold');
+        }
+    
+        function toggleItalic() {
+            document.execCommand('italic');
+        }
+    
+        function toggleUnderline() {
+            document.execCommand('underline');
+        }
+    
+        function toggleDirection() {
+            const editor = document.getElementById('content');
+            editor.dir = editor.dir === 'rtl' ? 'ltr' : 'rtl';
+        }
+    
+        function downloadHTMLFile(title, content, direction) {
+            const fontFamily = document.getElementById('fontFamily').value;
+    
+            // Add the Google Fonts link for the selected font
+            const fontLink = `
+                <link href="https://fonts.googleapis.com/css2?family=Vazir&family=IRANSans&family=Roboto&display=swap" rel="stylesheet">
+            `;
+    
+            // Create the HTML content with the font applied
+            const htmlContent = `<!DOCTYPE html>
+    <html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${title}</title>
+        ${fontLink}
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body dir="${direction}">
+        <div id="sidebar">
+            <ul>
+                <li><a href="#">خانه</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">تماس با ما</a></li>
+            </ul>
+        </div>
+        <div class="container">
+            <h1 style="font-family: ${fontFamily};">${title}</h1>
+            <div class="post" style="font-family: ${fontFamily};">${content}</div>
+        </div>
+    </body>
+    </html>`;
+    
+            // Create a blob and download the file
+            const blob = new Blob([htmlContent], { type: "text/html" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = title.replace(/\s+/g, "_") + ".html";
+            link.click();
+        }
+    </script>
+</body>
+</html>

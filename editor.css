@@ -1,0 +1,139 @@
+/* Reset some default styles */
+body, h1, h2, p, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-container h1 {
+    font-size: 36px;
+    color: #333;
+    font-family: 'Vazir', sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title-container .subtitle {
+    font-size: 18px;
+    color: #777;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding-top: 20px;
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#sidebar ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+#sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+#sidebar ul li a:hover {
+    background-color: #444;
+}
+
+/* Form & Editor Styles */
+#postForm {
+    width: 100%;
+    max-width: 700px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#title {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #f4f4f4;
+}
+
+.editor-container {
+    margin-bottom: 20px;
+}
+
+.editor-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.editor-buttons select, .editor-buttons button {
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.editor-buttons button {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+}
+
+.editor-buttons button:hover {
+    background-color: #ddd;
+}
+
+.editor {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}

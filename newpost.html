@@ -106,14 +106,16 @@
     <body dir="${direction}">
         <div id="sidebar">
             <ul>
-                <li><a href="#">خانه</a></li>
+                <li><a href="index.html">خانه</a></li>
                 <li><a href="#">درباره ما</a></li>
                 <li><a href="#">تماس با ما</a></li>
             </ul>
         </div>
         <div class="container">
+            <div class="post" style="font-family: ${fontFamily};">
             <h1 style="font-family: ${fontFamily};">${title}</h1>
-            <div class="post" style="font-family: ${fontFamily};">${content}</div>
+            ${content}
+            </div>
         </div>
     </body>
     </html>`;

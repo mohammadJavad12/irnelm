@@ -10,10 +10,12 @@ body {
     min-height: 100vh;
     background-color: #f4f4f4;
     direction: rtl; /* Set text direction to Right-To-Left */
+    overflow-x: hidden;
 }
 
+/* Sidebar styles */
 #sidebar {
-    width: 250px; /* Sidebar width */
+    width: 250px;
     background-color: #333;
     color: white;
     position: fixed;
@@ -21,8 +23,39 @@ body {
     right: 0; /* Sidebar on the right in RTL mode */
     height: 100%;
     padding-top: 20px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
 }
 
+/* Hide sidebar on small screens */
+@media (max-width: 768px) {
+    #sidebar {
+        transform: translateX(100%);
+        width: 200px;
+    }
+
+    /* Show sidebar when active */
+    #sidebar.active {
+        transform: translateX(0);
+    }
+}
+
+/* Hamburger menu button */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Ensures it stays on top */
+    border-radius: 5px;
+}
+
+/* Sidebar list styles */
 #sidebar ul {
     list-style-type: none;
     padding: 0;
@@ -37,17 +70,26 @@ body {
     color: white;
     text-decoration: none;
     font-size: 18px;
+    display: block;
 }
 
 #sidebar ul li a:hover {
     background-color: #444;
-    display: block;
 }
 
+/* Main content styles */
 .container {
-    margin-right: 250px; /* Offset the content to the left to make room for the sidebar */
+    margin-right: 250px; /* Offset for sidebar */
     padding: 20px;
     flex-grow: 1;
+    transition: margin-right 0.3s ease-in-out;
+}
+
+/* Adjust content margin when sidebar is hidden */
+@media (max-width: 768px) {
+    .container {
+        margin-right: 0 ;
+    }
 }
 
 h1 {

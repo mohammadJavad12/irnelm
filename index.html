@@ -8,6 +8,8 @@
 </head>
 <body>
 
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
     <div id="sidebar">
         <ul>
             <li><a href="index.html">خانه</a></li>
@@ -17,15 +19,20 @@
     </div>
 
     <div class="container">
-        <h1>بلاگ ایرن علم</h1>
+        <br>
         <div id="posts">
             <div class="post">
-                <h1 style="font-family: Vazir;"><a href="post1.html">ایرن علم زنده شد!</h1></a>
-                
-                <p style="font-family: Vazir; color: rgb(0, 0, 0);">با سلام به همتون محمد جواد حق بیگی هستم و اومدم بعد از خیلی وقت ها. امیدوارم که سلامت باشید  ...</p>
+                <h2><a href="post1.html">ایرن علم زنده شد</a></h2>
+                <p>با سلام به همتون محمد جواد حق بیگی هستم و اومدم بعد از خیلی وقت ها. امیدوارم که سلامت باشید ...</p>
             </div>
         </div>
     </div>
+
+    <script>
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>

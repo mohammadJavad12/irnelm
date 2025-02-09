@@ -1,4 +1,3 @@
-/* Reset some default styles */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
@@ -9,7 +8,7 @@ body {
     display: flex;
     min-height: 100vh;
     background-color: #f4f4f4;
-    direction: rtl; /* Set text direction to Right-To-Left */
+    direction: rtl; /* Right-To-Left text */
     overflow-x: hidden;
 }
 
@@ -20,42 +19,19 @@ body {
     color: white;
     position: fixed;
     top: 0;
-    right: 0; /* Sidebar on the right in RTL mode */
+    right: -250px; /* Hidden by default */
     height: 100%;
     padding-top: 20px;
-    transition: transform 0.3s ease-in-out;
+    transition: right 0.3s ease-in-out;
     z-index: 999;
 }
 
-/* Hide sidebar on small screens */
-@media (max-width: 768px) {
-    #sidebar {
-        transform: translateX(100%);
-        width: 200px;
-    }
-
-    /* Show sidebar when active */
-    #sidebar.active {
-        transform: translateX(0);
-    }
+/* When sidebar is active */
+#sidebar.active {
+    right: 0;
 }
 
-/* Hamburger menu button */
-.menu-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background: #333;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 1000; /* Ensures it stays on top */
-    border-radius: 5px;
-}
-
-/* Sidebar list styles */
+/* Sidebar navigation */
 #sidebar ul {
     list-style-type: none;
     padding: 0;
@@ -77,18 +53,37 @@ body {
     background-color: #444;
 }
 
-/* Main content styles */
+/* Menu button */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000; /* Keeps it on top */
+    border-radius: 5px;
+}
+
+/* Adjust content when sidebar is open */
 .container {
-    margin-right: 250px; /* Offset for sidebar */
     padding: 20px;
     flex-grow: 1;
     transition: margin-right 0.3s ease-in-out;
 }
 
-/* Adjust content margin when sidebar is hidden */
+/* Shift content left when sidebar is open */
+.sidebar-open .container {
+    margin-right: 250px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-    .container {
-        margin-right: 0 ;
+    .sidebar-open .container {
+        margin-right: 0; /* On small screens, content stays full width */
     }
 }
 

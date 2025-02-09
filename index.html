@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ایرن علم</title>
+    <title>وبلاگ ساده من</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="container">
-        <br>
+        <h1>وبلاگ ساده من</h1>
         <div id="posts">
             <div class="post">
                 <h2><a href="post1.html">ایرن علم زنده شد</a></h2>
@@ -30,7 +30,12 @@
 
     <script>
         function toggleSidebar() {
-            document.getElementById('sidebar').classList.toggle('active');
+            const sidebar = document.getElementById('sidebar');
+            const body = document.body;
+
+            // Toggle sidebar class
+            sidebar.classList.toggle('active');
+            body.classList.toggle('sidebar-open');
         }
     </script>
 

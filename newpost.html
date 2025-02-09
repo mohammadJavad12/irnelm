@@ -126,6 +126,10 @@
             link.href = URL.createObjectURL(blob);
             link.download = title.replace(/\s+/g, "_") + ".html";
             link.click();
+            
+        }
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('active');
         }
     </script>
 </body>
